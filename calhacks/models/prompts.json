@@ -1,0 +1,4 @@
+{
+  "logs": "Status logs {LOGS}",
+  "enquiry_prompt": "You have found {SEVERITY} distress? What do you want to do inspect or report? Respond in a single word"
+}
