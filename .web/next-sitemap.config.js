@@ -1,0 +1,1 @@
+module.exports = {"siteUrl": "https://avasya.reflex.run", "generateRobotsTxt": true}
