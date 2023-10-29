@@ -1,4 +1,5 @@
 {
   "logs": "Here are the status logs {LOGS}\n",
-  "enquiry_prompt": "You have found {SEVERITY} distress? What do you want to do inspect or report? Respond in a single word"
+  "enquiry_prompt": "You have found {SEVERITY} distress? What do you want to do inspect or report? Respond in a single word",
+  "emote_query": "SELECT * from sentiment_classifier WHERE comment='{COMMENT_TEXT}'"
 }

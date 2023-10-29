@@ -11,14 +11,20 @@ prompts_json = json.load(f)
 app = Flask(__name__)
 
 
+@app.route("/get_emotion", methods=['POST'])
+def get_emotion():
+    if request.method == 'POST':
+        get_emotion(request.get_json()['data'])
+
+
 @app.route("/get_response", methods=['POST'])
 def get_response():
-    incidents = recent_incidents()
+    incidents = []
     incident_text = ""
     for i in range(len(incidents)):
         incident_text += str(i)+":"+incidents[i]+"\n"
     if (request.method == 'POST'):
-        return get_llama_response(prompts_json["logs"].format(LOGS=incident_text)+prompts_json["enquiry_prompt"].format(SEVERITY=request.get_json()["query"]))
+        return {"data": get_llama_response(prompts_json["logs"].format(LOGS=incident_text)+prompts_json["enquiry_prompt"].format(SEVERITY=request.get_json()["query"]))}
 
 
 @app.route("/get_detection", methods=['POST'])
