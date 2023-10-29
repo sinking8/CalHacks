@@ -5,8 +5,11 @@ import os
 load_dotenv()
 
 # Load Server
-server = mindsdb_sdk.connect(login=os.get_env(
-    "EMAIL_ID"), password=os.get_env("PASSWORD"))
+server = mindsdb_sdk.connect(login=os.getenv(
+    "EMAIL_ID"), password=os.getenv("PASSWORD"))
+
+
+def load_emotions(): pass
 
 
 def recent_incidents():

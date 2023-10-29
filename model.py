@@ -26,6 +26,6 @@ def get_llama_response(text):
         "sessionKey": "c1bb40ca5ee41dc7ac4d7d9cdcbe0146f319d0f1",
         "type": "chat"
     }, headers={
-        "Authorization": os.get_env("AUTH_KEY"),
+        "Authorization": os.getenv("AUTH_KEY"),
     })
     return res
