@@ -6,10 +6,11 @@ import "focus-visible/dist/focus-visible"
 import { Box, Breadcrumb, BreadcrumbItem, Heading, HStack, Image, Link, Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr, VStack } from "@chakra-ui/react"
 import { getEventURL } from "/utils/state.js"
 import NextLink from "next/link"
-import { Line as RechartsLine, ResponsiveContainer as RechartsResponsiveContainer, XAxis as RechartsXAxis, YAxis as RechartsYAxis } from "recharts"
+import { Bar as RechartsBar, Line as RechartsLine, ResponsiveContainer as RechartsResponsiveContainer, XAxis as RechartsXAxis, YAxis as RechartsYAxis } from "recharts"
 import dynamic from "next/dynamic"
 import NextHead from "next/head"
 
+const RechartsBarChart = dynamic(() => import('recharts').then((mod) => mod.BarChart), { ssr: false });
 const RechartsLineChart = dynamic(() => import('recharts').then((mod) => mod.LineChart), { ssr: false });
 
 
@@ -159,7 +160,7 @@ export default function Component() {
   {`Bots Statistics`}
 </Heading>
 </Box>
-  <VStack sx={{"height": "20em", "width": "100%", "alignItems": "stretch", "justifyContent": "space-between"}}>
+  <HStack sx={{"height": "20em", "width": "100%", "alignItems": "center", "justifyContent": "space-between"}}>
   <RechartsResponsiveContainer height={`100%`} minHeight={100} minWidth={200} width={`100%`}>
   <RechartsLineChart data={state.line_chart_state.data} height={`100%`} width={`100%`}>
   <RechartsLine dataKey={`pv`} stroke={`#8884d8`} type={state.line_chart_state.pv_type}/>
@@ -168,7 +169,14 @@ export default function Component() {
   <RechartsYAxis/>
 </RechartsLineChart>
 </RechartsResponsiveContainer>
-</VStack>
+  <RechartsResponsiveContainer height={`100%`} minHeight={100} minWidth={200} width={`100%`}>
+  <RechartsBarChart data={state.line_chart_state.emote_data} height={`100%`} width={`100%`}>
+  <RechartsBar dataKey={`frequency`} fill={`#8884d8`} stroke={`#8884d8`}/>
+  <RechartsXAxis dataKey={`emotion`}/>
+  <RechartsYAxis/>
+</RechartsBarChart>
+</RechartsResponsiveContainer>
+</HStack>
 </VStack>
   <NextHead>
   <title>

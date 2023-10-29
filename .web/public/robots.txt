@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://avasya.reflex.run
-
-# Sitemaps
-Sitemap: https://avasya.reflex.run/sitemap.xml

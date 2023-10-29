@@ -3,7 +3,7 @@ from calhacks.state import *
 
 
 def render_stats():
-    return rx.vstack(
+    return rx.hstack(
         rx.recharts.line_chart(
             rx.recharts.line(
                 data_key="pv",
@@ -18,6 +18,14 @@ def render_stats():
             rx.recharts.x_axis(data_key="name"),
             rx.recharts.y_axis(),
             data=LineChartState.data,
+        ),
+        rx.recharts.bar_chart(
+            rx.recharts.bar(
+                data_key="frequency", stroke="#8884d8", fill="#8884d8"
+            ),
+            rx.recharts.x_axis(data_key="emotion"),
+            rx.recharts.y_axis(),
+            data=LineChartState.emote_data,
         ),
         height="20em",
         width="100%",
