@@ -1,6 +1,6 @@
 # Welcome to ARISTA!
 
-
+## Introducing our patrol SPOT robot : ARISTA! It's a high-tech guardian offering real-time monitoring, quick response to threats, and reducing risks to human officers. Boost your security today!
 
 ### The Analytics Platform Project Structure is in the below format.
 
