@@ -1,17 +1,8 @@
-# Welcome to Reflex!
+# Welcome to ARISTA!
 
-This is the base Reflex template - installed when you run `reflex init`.
 
-If you want to use a different template, pass the `--template` flag to `reflex init`.
-For example, if you want a more basic starting point, you can run:
 
-```bash
-reflex init --template blank
-```
-
-## About this Template
-
-This template has the following directory structure:
+### The Analytics Platform Project Structure is in the below format.
 
 ```bash
 ├── README.md
